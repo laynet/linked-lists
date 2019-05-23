@@ -27,40 +27,39 @@ SET current.next to node
 RETURN node
 END FUNCTION
 
-this.size = function(){
-    return length;
-  };
+function Node(data) {
+  this.data = data;
+  this.next = null
+}
 
-this.head = function(){
-    return head;
-  };
+function LinkedList(){
+  this.length = 0
+  this.head = null
+}
+LinkedList.prototype.add = function(val){
+  if(!val){
+    throw new Error("Please pass in a value")
+  }
+  var node = new Node(val);
+  //if there is no head set node to head of LinkedList
+  if(!this.head){
+    this.head = node;
+    this.length += 1;
+    return node
+  }
+  var current = this.head;
+  while(current.next) {
+    current = current.next
+  }
+  current.next = node;
+  this.length += 1;
+  return node
+}
 
-this.add = function(element){
-  var node = new Node(element);
-    if(head === null){
-        head = node;
-    } else {
-        var currentNode = head;
-while(currentNode.next){
-            currentNode  = currentNode.next;
-        }
-
-        currentNode.next = node;
-    }
-
-    length++;
-  }; 
-};
-
-var x = new LinkedList();
-x.add('Kitten');
-x.add('Puppy');
-x.add('Dog');
-x.add('Cat');
-x.add('Fish');
-x.size();
-x.head();
-console.log(x);
+var sll = new LinkedList();
+sll.add(1);
+sll.add(2)
+console.log(sll)
 
 
 
