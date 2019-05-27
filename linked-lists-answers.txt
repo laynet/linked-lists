@@ -1,19 +1,17 @@
 1) What are some pros and cons of using linked lists instead of arrays?
-<<<<<<< HEAD
-Pros - can easily insert of remove nodes from the list without reorganization of the entire data structure.
 
+Pros - can easily insert of remove nodes from the list without reorganization of the entire data structure.
+Popular when developers donn’t know how many items an array will ultimately contain.
 Cons - Random access of elements is not allowed and search operation is slow
 uses more memory than arrays
-=======
-Pros - popular when developers donn’t know how many items an array will ultimately contain.
->>>>>>> question 1 completed
+
 2) Come up with a real world example of a linked lists
 
 
 Programming Questions
 
 1) The linked list push function should take a value, create a node, and add it to the end of a list. Below is pseudocode for a push function for a singly linked list. However, there is something wrong with it. Submit both an explanation of the bug and a functional implementation of the method.
-<<<<<<< HEAD
+
  there isn't a while loop in the function to traverse the nodes, i've added one in the pseudocode
 FUNCTION push(element)
 CREATE node
@@ -66,9 +64,6 @@ sll.add(1);
 sll.add(2)
 console.log(sll)
 
-
-=======
->>>>>>> question 1 completed
 
 2) Given an unsorted singly linked list, remove all duplicates from the linked list.
 Example
