@@ -47,7 +47,7 @@ LinkedList.prototype.add = function(val){
   //if there is no head set node to head of LinkedList
   if(!this.head){
     this.head = node;
-    this.length += 1;
+    this.length = 1;
     return node
   }
   var current = this.head;
@@ -74,3 +74,5 @@ Output: a -> c -> d
 Example
 Input: a -> b -> c -> d
 Output: d -> c -> b -> a
+
+https://repl.it/@laynet/LL-assignment-fr-fr
