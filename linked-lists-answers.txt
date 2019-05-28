@@ -6,7 +6,7 @@ Cons - Random access of elements is not allowed and search operation is slow
 uses more memory than arrays
 
 2) Come up with a real world example of a linked lists
-
+The history section of a web browser/the back button
 
 Programming Questions
 
@@ -59,10 +59,7 @@ LinkedList.prototype.add = function(val){
   return node
 }
 
-var sll = new LinkedList();
-sll.add(1);
-sll.add(2)
-console.log(sll)
+
 
 
 2) Given an unsorted singly linked list, remove all duplicates from the linked list.
@@ -70,9 +67,46 @@ Example
 Input: a -> c -> d -> d -> a
 Output: a -> c -> d
 
+LinkedList.prototype.removeDuplicates = function() { 
+  if(!this.head) {
+    return
+  }
+
+  var currentOuter = this.head;
+  var currentInner = this.head.next;
+  var prev = this.head
+
+  while(currentOuter) {
+    while(currentInner) {
+      if(currentOuter.data === currentInner.data) {
+        prev.next = currentInner.next
+        currentInner = prev.next
+      } else {
+        prev = currentInner
+        currentInner = currentInner.next
+      }
+    }
+    currentOuter = currentOuter.next
+    if(currentOuter){
+      currentInner = currentOuter.next}
+    prev = currentOuter   
+  }
+
+}
+
+
+
 3) Given an unsorted singly linked list, reverse it.
 Example
 Input: a -> b -> c -> d
 Output: d -> c -> b -> a
 
-https://repl.it/@laynet/LL-assignment-fr-fr
+LinkedList.prototype.reverse = function(head) {
+  if (!head || !head.next) {
+    return head;
+  }
+  let tmp = reverse(head.next);
+  head.next.next = head;
+  head.next = undefined;
+  return tmp;
+}
