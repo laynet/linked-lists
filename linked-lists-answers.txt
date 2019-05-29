@@ -40,9 +40,7 @@ function LinkedList(){
   this.head = null
 }
 LinkedList.prototype.add = function(val){
-  if(!val){
-    throw new Error("Please pass in a value")
-  }
+  
   var node = new Node(val);
   //if there is no head set node to head of LinkedList
   if(!this.head){
